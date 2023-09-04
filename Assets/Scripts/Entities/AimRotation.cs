@@ -8,11 +8,11 @@ public class AimRotation : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer characterRenderer;
 
-    private CharacterController _controller;
+    private PlayerController _controller;
 
     private void Awake()
     {
-        _controller = GetComponent<CharacterController>();
+        _controller = GetComponent<PlayerController>();
     }
     // Start is called before the first frame update
     void Start()
