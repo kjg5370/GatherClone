@@ -7,7 +7,9 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager I;
 
-    public TMP_Text playerNameText;
+    public GameObject[] charPrefabs;
+    public GameObject player;
+    //public TMP_Text playerNameText;
 
     private void Awake()
     {
@@ -17,11 +19,11 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // PlayerPrefs에서 플레이어 이름 가져오기
-        string playerName = PlayerPrefs.GetString("PlayerName");
+        player = Instantiate(charPrefabs[(int)(DataManager.i.currentCharacter)]);
+        TMP_Text playerNameText = player.transform.Find("Canvas/Name").GetComponent<TMP_Text>();
 
-        // UI에 이름 표시
-        playerNameText.text = playerName;
+        playerNameText.text = PlayerPrefs.GetString("PlayerName");
+
     }
 
     // Update is called once per frame
