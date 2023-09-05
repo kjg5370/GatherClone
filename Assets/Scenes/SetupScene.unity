@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNameInput: {fileID: 1462057462}
+  EnterName: {fileID: 481138241}
 --- !u!114 &559083891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,7 +1147,7 @@ GameObject:
   - component: {fileID: 1085942026}
   - component: {fileID: 1085942025}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,7 +2015,7 @@ GameObject:
   - component: {fileID: 1710601713}
   - component: {fileID: 1710601712}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: InputName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
