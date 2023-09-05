@@ -13,7 +13,7 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
-        I = this;
+            I = this;
     }
 
     // Start is called before the first frame update
@@ -23,7 +23,8 @@ public class gameManager : MonoBehaviour
         TMP_Text playerNameText = player.transform.Find("Canvas/Name").GetComponent<TMP_Text>();
 
         playerNameText.text = PlayerPrefs.GetString("PlayerName");
-
+        MainCameraController mainCamera = Camera.main.GetComponent<MainCameraController>();
+        mainCamera.player = player.transform;
     }
 
     // Update is called once per frame

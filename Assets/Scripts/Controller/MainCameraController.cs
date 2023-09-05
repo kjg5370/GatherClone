@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainCameraController : MonoBehaviour
 {
-    [SerializeField] Transform player;
+    public Transform player;
     [SerializeField] float smooth = 0.2f;
 
     private void FixedUpdate()
