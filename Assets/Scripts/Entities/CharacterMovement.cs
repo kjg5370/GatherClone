@@ -6,7 +6,9 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     private PlayerController _Controller;
-    
+
+    private Animator anim;
+
     private Vector2 _movementDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
 
@@ -14,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
     {
         _Controller = GetComponent<PlayerController>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyMovement(_movementDirection);
+        if (_movementDirection != Vector2.zero) anim.SetBool("Move", true);
+        else anim.SetBool("Move", false);
     }
 
     private void ApplyMovement(Vector2 direction)
