@@ -10,22 +10,34 @@ public class SelectChar : MonoBehaviour
     public GameObject Penguin;
     public GameObject Knight;
 
+    private Vector3 playerPos = Vector3.zero;
     public void OpenPanel()
     {
         ChooseChar.SetActive(true);
     }
+    private void SelectCharacter(Character selectedCharacter)
+    {
+        DataManager.i.currentCharacter = selectedCharacter;
+        ChooseChar.SetActive(false);
+        if (gameManager.I == null)
+        {
+            Penguin.SetActive(selectedCharacter == Character.penguin);
+            Knight.SetActive(selectedCharacter == Character.knight);
+        }
+        else if(gameManager.I.player != null)
+        {
+            GameObject player = gameManager.I.player;
+            playerPos = player.transform.position;
+            Destroy(player);
+            gameManager.I.SetUpPlayer(playerPos);
+        }
+    }
     public void OnPenguinSelect()
     {
-        DataManager.i.currentCharacter = Character.penguin;
-        ChooseChar.SetActive(false);
-         Knight.SetActive(false);
-        Penguin.SetActive(true);
+        SelectCharacter(Character.penguin);
     }
-    public void OnKnightnSelect()
+    public void OnKnightSelect()
     {
-        DataManager.i.currentCharacter = Character.knight;
-        ChooseChar.SetActive(false);
-        Penguin.SetActive(false);
-        Knight.SetActive(true);
+        SelectCharacter(Character.knight);
     }
 }

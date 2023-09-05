@@ -19,17 +19,22 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = Instantiate(charPrefabs[(int)(DataManager.i.currentCharacter)]);
-        TMP_Text playerNameText = player.transform.Find("Canvas/Name").GetComponent<TMP_Text>();
-
-        playerNameText.text = PlayerPrefs.GetString("PlayerName");
-        MainCameraController mainCamera = Camera.main.GetComponent<MainCameraController>();
-        mainCamera.player = player.transform;
+        SetUpPlayer(Vector3.zero);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetUpPlayer(Vector3 pos)
+    {
+        player = Instantiate(charPrefabs[(int)(DataManager.i.currentCharacter)],pos,Quaternion.identity);
+        TMP_Text playerNameText = player.transform.Find("Canvas/Name").GetComponent<TMP_Text>();
+
+        playerNameText.text = PlayerPrefs.GetString("PlayerName");
+        MainCameraController mainCamera = Camera.main.GetComponent<MainCameraController>();
+        mainCamera.player = player.transform;
     }
 }
