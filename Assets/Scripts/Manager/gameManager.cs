@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class gameManager : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class gameManager : MonoBehaviour
     public GameObject player;
 
     public TMP_Text participant;
+    public TMP_Text timeTxt;
     private TMP_Text playerNameText;
-   
 
     private void Awake()
     {
@@ -36,6 +37,8 @@ public class gameManager : MonoBehaviour
             participant.text += '\n' + NPC[i].name;
         }
         participant.text += '\n' + PlayerPrefs.GetString("PlayerName");
+
+        timeTxt.text = DateTime.Now.ToString("tt HH:mm");
     }
 
     public void SetUpPlayer(Vector3 pos)
