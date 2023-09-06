@@ -13,6 +13,7 @@ public class SelectChar : MonoBehaviour
     private Vector3 playerPos = Vector3.zero;
     public void OpenPanel()
     {
+        if(gameManager.I != null)gameManager.I.isMoveBlocked = true;
         ChooseChar.SetActive(true);
     }
     private void SelectCharacter(Character selectedCharacter)
@@ -30,6 +31,7 @@ public class SelectChar : MonoBehaviour
             playerPos = player.transform.position;
             Destroy(player);
             gameManager.I.SetUpPlayer(playerPos);
+            gameManager.I.isMoveBlocked = false;
         }
     }
     public void OnPenguinSelect()

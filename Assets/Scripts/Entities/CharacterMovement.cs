@@ -26,9 +26,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        ApplyMovement(_movementDirection);
-        if (_movementDirection != Vector2.zero) anim.SetBool("Move", true);
-        else anim.SetBool("Move", false);
+        if (!gameManager.I.isMoveBlocked)
+        {
+            ApplyMovement(_movementDirection);
+            if (_movementDirection != Vector2.zero) anim.SetBool("Move", true);
+            else anim.SetBool("Move", false);
+        }
+        else
+        {
+            ApplyMovement(Vector2.zero);
+            anim.SetBool("Move", false);
+        }
     }
 
     private void ApplyMovement(Vector2 direction)
