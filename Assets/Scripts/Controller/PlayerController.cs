@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     
     public void CallMoveEvent(Vector2 direction)
     {
-        OnMoveEvent?.Invoke(direction);
+        if (!gameManager.I.isMoveBlocked)
+        {
+            OnMoveEvent?.Invoke(direction);
+        }
     }
     public void CallLookEvent(Vector2 direction)
     {

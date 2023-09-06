@@ -28,6 +28,7 @@ public class SetUpButton : MonoBehaviour
             PlayerPrefs.SetString("PlayerName", playerName);
             if (currentScene.name == "SetupScene") SceneManager.LoadScene("MainScene");
             EnterName.SetActive(false);
+            if(gameManager.I != null)gameManager.I.isMoveBlocked = false;
         }
         else playerNameInput.text = "";
     }
@@ -35,5 +36,6 @@ public class SetUpButton : MonoBehaviour
     public void ChangeName()
     {
         EnterName.SetActive(true);
+        gameManager.I.isMoveBlocked = true;
     }
 }

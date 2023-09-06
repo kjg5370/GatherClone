@@ -47,6 +47,7 @@ public class DialogueController : MonoBehaviour
 
     private void Conclude()
     {
+        gameManager.I.isMoveBlocked = false;
         gameObject.SetActive(false);
     }
 }

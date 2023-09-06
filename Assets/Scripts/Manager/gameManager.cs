@@ -18,7 +18,7 @@ public class gameManager : MonoBehaviour
     public TMP_Text timeTxt;
     private TMP_Text playerNameText;
 
-
+    public bool isMoveBlocked = false;
     private void Awake()
     {
             I = this;

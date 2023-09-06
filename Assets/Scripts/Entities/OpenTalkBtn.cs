@@ -31,6 +31,7 @@ public class OpenTalkBtn : MonoBehaviour
     {
         TalkBtn.SetActive(false);
         Panel.SetActive(true);
+        gameManager.I.isMoveBlocked = true;
         gameManager.I.dialogueController.Initialize(dialogue);
     }
 }
