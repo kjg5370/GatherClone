@@ -9,12 +9,15 @@ public class gameManager : MonoBehaviour
     public static gameManager I;
 
     public GameObject[] charPrefabs;
-    public GameObject[] NPC;
+    public Actor[] NPC;
     public GameObject player;
+
+    public DialogueController dialogueController;
 
     public TMP_Text participant;
     public TMP_Text timeTxt;
     private TMP_Text playerNameText;
+
 
     private void Awake()
     {
@@ -34,7 +37,7 @@ public class gameManager : MonoBehaviour
         participant.text = "";
         for (int i = 0; i < NPC.Length; i++)
         {
-            participant.text += '\n' + NPC[i].name;
+            participant.text += '\n' + NPC[i].Name;
         }
         participant.text += '\n' + PlayerPrefs.GetString("PlayerName");
 
@@ -44,6 +47,7 @@ public class gameManager : MonoBehaviour
     public void SetUpPlayer(Vector3 pos)
     {
         player = Instantiate(charPrefabs[(int)(DataManager.i.currentCharacter)],pos,Quaternion.identity);
+        player.tag = "Player";
         playerNameText = player.transform.Find("Canvas/Name").GetComponent<TMP_Text>();
 
         MainCameraController mainCamera = Camera.main.GetComponent<MainCameraController>();

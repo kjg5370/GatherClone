@@ -542,6 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2e7e20db813d84ba79e6f9e16514c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TalkBtn: {fileID: 0}
 --- !u!114 &4221461337833913666
 MonoBehaviour:
   m_ObjectHideFlags: 0
