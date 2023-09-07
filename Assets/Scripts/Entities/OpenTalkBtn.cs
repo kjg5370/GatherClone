@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OpenTalkBtn : MonoBehaviour
 {
+    [SerializeField] Actor NPC;
+    [SerializeField] TMP_Text nameText;
+
     public Transform player; // player Transform
     public GameObject TalkBtn; // 대화 버튼
     public GameObject Panel;
@@ -11,6 +15,10 @@ public class OpenTalkBtn : MonoBehaviour
 
     [SerializeField] DialogueContainer dialogue;
 
+    private void Start()
+    {
+        nameText.text = NPC.Name;
+    }
     private void Update()
     {
         player = gameManager.I.player.transform;

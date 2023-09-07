@@ -183,7 +183,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 10df9bd90a2f4b1449e657135faf20a3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &63836463
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &72531415
@@ -23401,6 +23401,7 @@ MonoBehaviour:
   dialogueController: {fileID: 1835663331}
   participant: {fileID: 1569336893}
   timeTxt: {fileID: 88400264}
+  isMoveBlocked: 0
 --- !u!4 &1279472437
 Transform:
   m_ObjectHideFlags: 0
@@ -28455,6 +28456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b490d8709ebec4f9b7312cacc46429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPC: {fileID: 11400000, guid: 898ea6ffa69e9594e8fae11d6467154a, type: 2}
+  nameText: {fileID: 63836462}
   player: {fileID: 0}
   TalkBtn: {fileID: 1032781621}
   Panel: {fileID: 1835663327}
