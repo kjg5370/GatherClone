@@ -55,7 +55,7 @@ Assets/Scenes 폴더에 있는 SetupScene 파일을 더블클릭 합니다.<br>
 경고: SetupScene 외의 Scene에서 실행하면 캐릭터가 생성되지 않습니다.
 
 
-https://github.com/kjg5370/GatherClone/assets/105926662/f6db9a48-43b5-4a30-8bac-7267bfbcd3d7
+![ezgif com-video-to-gif](https://github.com/kjg5370/GatherClone/assets/105926662/fbe89958-4862-4eaf-a03d-78ac339b57e1)
 
 
 
